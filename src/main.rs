@@ -24,9 +24,16 @@ impl Display for City {
 
 #[derive(Debug)]
 struct Color {
-    red: u8,
-    green: u8,
-    blue: u8,
+    red: i32,
+    green: i32,
+    blue: i32,
+}
+
+impl Display for Color{
+fn fmt(&self, f: &mut Formatter) -> fmt::Result{
+    write!(f, "red:{}, green:{}, blue:{}", self.red, self.green, self.blue)
+}
+
 }
 
 fn main() {
@@ -43,7 +50,7 @@ fn main() {
         Color { red: 0, green: 3, blue: 254 },
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
-        // Hint : Fix the code so you can print it using {}
-        println!("{:?}", *color);
+        
+        println!("{}", *color);
     }
 }
